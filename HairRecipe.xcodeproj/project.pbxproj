@@ -11,6 +11,8 @@
 		CE1065AE29AF2AC50090E972 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1065AD29AF2AC50090E972 /* ContentView.swift */; };
 		CE1065B029AF2AC90090E972 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE1065AF29AF2AC90090E972 /* Assets.xcassets */; };
 		CE1065B329AF2AC90090E972 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE1065B229AF2AC90090E972 /* Preview Assets.xcassets */; };
+		CE54783629B1153E002AF634 /* ClientsDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE54783429B1153E002AF634 /* ClientsDataModel.xcdatamodeld */; };
+		CE54783829B116CF002AF634 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE54783729B116CF002AF634 /* Client.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		CE1065AD29AF2AC50090E972 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CE1065AF29AF2AC90090E972 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE1065B229AF2AC90090E972 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CE54783529B1153E002AF634 /* ClientsDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ClientsDataModel.xcdatamodel; sourceTree = "<group>"; };
+		CE54783729B116CF002AF634 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +56,10 @@
 			isa = PBXGroup;
 			children = (
 				CE1065AB29AF2AC50090E972 /* HairRecipeApp.swift */,
-				CE1065AD29AF2AC50090E972 /* ContentView.swift */,
-				CE1065AF29AF2AC90090E972 /* Assets.xcassets */,
+				CE54783929B116F7002AF634 /* Model */,
+				CE54783A29B11710002AF634 /* Views */,
+				CE54783B29B11738002AF634 /* Resources */,
+				CE54783429B1153E002AF634 /* ClientsDataModel.xcdatamodeld */,
 				CE1065B129AF2AC90090E972 /* Preview Content */,
 			);
 			path = HairRecipe;
@@ -65,6 +71,30 @@
 				CE1065B229AF2AC90090E972 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CE54783929B116F7002AF634 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CE54783729B116CF002AF634 /* Client.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CE54783A29B11710002AF634 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CE1065AD29AF2AC50090E972 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CE54783B29B11738002AF634 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CE1065AF29AF2AC90090E972 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +167,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE54783629B1153E002AF634 /* ClientsDataModel.xcdatamodeld in Sources */,
 				CE1065AE29AF2AC50090E972 /* ContentView.swift in Sources */,
+				CE54783829B116CF002AF634 /* Client.swift in Sources */,
 				CE1065AC29AF2AC50090E972 /* HairRecipeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,6 +371,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CE54783429B1153E002AF634 /* ClientsDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CE54783529B1153E002AF634 /* ClientsDataModel.xcdatamodel */,
+			);
+			currentVersion = CE54783529B1153E002AF634 /* ClientsDataModel.xcdatamodel */;
+			path = ClientsDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CE1065A029AF2AC40090E972 /* Project object */;
 }
