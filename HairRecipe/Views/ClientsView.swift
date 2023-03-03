@@ -8,10 +8,33 @@
 import SwiftUI
 
 struct ClientsView: View {
+    @State private var isShowNewClient = false
+    
     var body: some View {
         NavigationStack {
             List {
                 ForEach((0...10), id: \.self) { item in
+                    ZStack(alignment: .leading) {
+                        NavigationLink(destination:  ClientDetailView()) {
+                            EmptyView()
+                        }
+                        ClientRowView()
+                    }
+                }
+            }
+            .toolbar {
+                ToolbarItem(placement: .primaryAction) {
+                    Button {
+                        isShowNewClient.toggle()
+                    } label: {
+                        Image(systemName: "plus")
+                            .font(.title2)
+                    }
+                }
+            }
+            .sheet(isPresented: $isShowNewClient) {
+                NavigationStack {
+                    CreateClientView()
                 }
             }
             .navigationTitle("Clients")
