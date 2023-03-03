@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ClientsView: View {
     @State private var isShowNewClient = false
+    var provider = ClientsProvider.shared
     
     var body: some View {
         NavigationStack {
@@ -34,7 +35,7 @@ struct ClientsView: View {
             }
             .sheet(isPresented: $isShowNewClient) {
                 NavigationStack {
-                    CreateClientView()
+                    CreateClientView(viewModel: .init(provider: provider))
                 }
             }
             .navigationTitle("Clients")

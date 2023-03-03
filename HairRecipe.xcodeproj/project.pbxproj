@@ -17,6 +17,7 @@
 		CE54784029B1D1A8002AF634 /* ClientRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE54783F29B1D1A8002AF634 /* ClientRowView.swift */; };
 		CE54784229B1D587002AF634 /* ClientDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE54784129B1D587002AF634 /* ClientDetailView.swift */; };
 		CE54784429B1DD13002AF634 /* CreateClientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE54784329B1DD13002AF634 /* CreateClientView.swift */; };
+		CE54784729B1EAAB002AF634 /* EditClientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE54784629B1EAAB002AF634 /* EditClientViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		CE54783F29B1D1A8002AF634 /* ClientRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientRowView.swift; sourceTree = "<group>"; };
 		CE54784129B1D587002AF634 /* ClientDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientDetailView.swift; sourceTree = "<group>"; };
 		CE54784329B1DD13002AF634 /* CreateClientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateClientView.swift; sourceTree = "<group>"; };
+		CE54784629B1EAAB002AF634 /* EditClientViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditClientViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +98,7 @@
 				CE1065AD29AF2AC50090E972 /* ClientsView.swift */,
 				CE54783F29B1D1A8002AF634 /* ClientRowView.swift */,
 				CE54784129B1D587002AF634 /* ClientDetailView.swift */,
-				CE54784329B1DD13002AF634 /* CreateClientView.swift */,
+				CE54784529B1EA2F002AF634 /* Create */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -115,6 +117,15 @@
 				CE54783D29B1C86D002AF634 /* ClientsProvider.swift */,
 			);
 			path = Provider;
+			sourceTree = "<group>";
+		};
+		CE54784529B1EA2F002AF634 /* Create */ = {
+			isa = PBXGroup;
+			children = (
+				CE54784329B1DD13002AF634 /* CreateClientView.swift */,
+				CE54784629B1EAAB002AF634 /* EditClientViewModel.swift */,
+			);
+			path = Create;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +206,7 @@
 				CE54783829B116CF002AF634 /* Client.swift in Sources */,
 				CE1065AC29AF2AC50090E972 /* HairRecipeApp.swift in Sources */,
 				CE54784429B1DD13002AF634 /* CreateClientView.swift in Sources */,
+				CE54784729B1EAAB002AF634 /* EditClientViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

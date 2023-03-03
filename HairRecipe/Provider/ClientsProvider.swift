@@ -18,6 +18,10 @@ final class ClientsProvider {
         persistentContainer.viewContext
     }
     
+    var newContext: NSManagedObjectContext {
+        persistentContainer.newBackgroundContext()
+    }
+    
     private init() {
         
         persistentContainer = NSPersistentContainer(name: "ClientsDataModel")
