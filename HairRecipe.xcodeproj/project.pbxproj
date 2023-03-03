@@ -13,6 +13,7 @@
 		CE1065B329AF2AC90090E972 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE1065B229AF2AC90090E972 /* Preview Assets.xcassets */; };
 		CE54783629B1153E002AF634 /* ClientsDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE54783429B1153E002AF634 /* ClientsDataModel.xcdatamodeld */; };
 		CE54783829B116CF002AF634 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE54783729B116CF002AF634 /* Client.swift */; };
+		CE54783E29B1C86D002AF634 /* ClientsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE54783D29B1C86D002AF634 /* ClientsProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		CE1065B229AF2AC90090E972 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CE54783529B1153E002AF634 /* ClientsDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ClientsDataModel.xcdatamodel; sourceTree = "<group>"; };
 		CE54783729B116CF002AF634 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		CE54783D29B1C86D002AF634 /* ClientsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientsProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				CE1065AB29AF2AC50090E972 /* HairRecipeApp.swift */,
+				CE54783C29B1C828002AF634 /* Provider */,
 				CE54783929B116F7002AF634 /* Model */,
 				CE54783A29B11710002AF634 /* Views */,
 				CE54783B29B11738002AF634 /* Resources */,
@@ -95,6 +98,14 @@
 				CE1065AF29AF2AC90090E972 /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		CE54783C29B1C828002AF634 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				CE54783D29B1C86D002AF634 /* ClientsProvider.swift */,
+			);
+			path = Provider;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,6 +180,7 @@
 			files = (
 				CE54783629B1153E002AF634 /* ClientsDataModel.xcdatamodeld in Sources */,
 				CE1065AE29AF2AC50090E972 /* ContentView.swift in Sources */,
+				CE54783E29B1C86D002AF634 /* ClientsProvider.swift in Sources */,
 				CE54783829B116CF002AF634 /* Client.swift in Sources */,
 				CE1065AC29AF2AC50090E972 /* HairRecipeApp.swift in Sources */,
 			);

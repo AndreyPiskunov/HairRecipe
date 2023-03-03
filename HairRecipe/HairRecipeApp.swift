@@ -12,6 +12,7 @@ struct HairRecipeApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(\.managedObjectContext, ClientsProvider.shared.viewContext)
         }
     }
 }
