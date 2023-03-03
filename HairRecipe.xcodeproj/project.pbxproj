@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CE1065AC29AF2AC50090E972 /* HairRecipeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1065AB29AF2AC50090E972 /* HairRecipeApp.swift */; };
-		CE1065AE29AF2AC50090E972 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1065AD29AF2AC50090E972 /* ContentView.swift */; };
+		CE1065AE29AF2AC50090E972 /* ClientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1065AD29AF2AC50090E972 /* ClientsView.swift */; };
 		CE1065B029AF2AC90090E972 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE1065AF29AF2AC90090E972 /* Assets.xcassets */; };
 		CE1065B329AF2AC90090E972 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE1065B229AF2AC90090E972 /* Preview Assets.xcassets */; };
 		CE54783629B1153E002AF634 /* ClientsDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE54783429B1153E002AF634 /* ClientsDataModel.xcdatamodeld */; };
@@ -19,7 +19,7 @@
 /* Begin PBXFileReference section */
 		CE1065A829AF2AC50090E972 /* HairRecipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HairRecipe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE1065AB29AF2AC50090E972 /* HairRecipeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HairRecipeApp.swift; sourceTree = "<group>"; };
-		CE1065AD29AF2AC50090E972 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CE1065AD29AF2AC50090E972 /* ClientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientsView.swift; sourceTree = "<group>"; };
 		CE1065AF29AF2AC90090E972 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE1065B229AF2AC90090E972 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CE54783529B1153E002AF634 /* ClientsDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ClientsDataModel.xcdatamodel; sourceTree = "<group>"; };
@@ -87,7 +87,7 @@
 		CE54783A29B11710002AF634 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				CE1065AD29AF2AC50090E972 /* ContentView.swift */,
+				CE1065AD29AF2AC50090E972 /* ClientsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -179,7 +179,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE54783629B1153E002AF634 /* ClientsDataModel.xcdatamodeld in Sources */,
-				CE1065AE29AF2AC50090E972 /* ContentView.swift in Sources */,
+				CE1065AE29AF2AC50090E972 /* ClientsView.swift in Sources */,
 				CE54783E29B1C86D002AF634 /* ClientsProvider.swift in Sources */,
 				CE54783829B116CF002AF634 /* Client.swift in Sources */,
 				CE1065AC29AF2AC50090E972 /* HairRecipeApp.swift in Sources */,

@@ -7,20 +7,20 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct ClientsView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationStack {
+            List {
+                ForEach((0...10), id: \.self) { item in
+                }
+            }
+            .navigationTitle("Clients")
         }
-        .padding()
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ClientsView()
     }
 }

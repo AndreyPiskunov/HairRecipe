@@ -11,7 +11,7 @@ import SwiftUI
 struct HairRecipeApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ClientsView()
                 .environment(\.managedObjectContext, ClientsProvider.shared.viewContext)
         }
     }
