@@ -22,8 +22,8 @@ struct ClientRowView: View {
     }
 }
 
-//struct ClientRowView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ClientRowView(client: <#Client#>)
-//    }
-//}
+struct ClientRowView_Previews: PreviewProvider {
+    static var previews: some View {
+        ClientRowView(client: .preview())
+    }
+}

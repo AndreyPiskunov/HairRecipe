@@ -11,7 +11,7 @@ struct ClientsView: View {
     
     @State private var isShowNewClient = false
     
-    @FetchRequest(fetchRequest: Client.all()) private var clients
+    @FetchRequest(fetchRequest: Client.allClients()) private var clients
     
     var provider = ClientsProvider.shared
     
@@ -49,6 +49,14 @@ struct ClientsView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ClientsView()
+        
+        let preview = ClientsProvider.shared
+        
+        ClientsView(provider: preview)
+            .environment(\.managedObjectContext, preview.viewContext)
+            .previewDisplayName("Clients with Data")
+            .onAppear{
+                Client.makePreview(count: 10, in: preview.viewContext)
+            }
     }
 }

@@ -17,7 +17,7 @@ struct CreateClientView: View {
             Section("Biography") {
                 TextField ("Name", text: $viewModel.client.name)
                     .keyboardType(.namePhonePad)
-                
+
                 TextField ("Procedure", text: $viewModel.client.procedure)
                 
                 DatePicker("Date", selection: $viewModel.client.date,
@@ -38,7 +38,7 @@ struct CreateClientView: View {
             ToolbarItem(placement: .navigationBarLeading) {
                 Button("Done") {
                     do {
-                        try viewModel.save()
+                        try viewModel.saveClientContext()
                         dismiss()
                     } catch {
                        print(error)
@@ -57,7 +57,11 @@ struct CreateClientView: View {
 struct CreateClientView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            CreateClientView(viewModel: .init(provider: .shared))
+            
+            let preview = ClientsProvider.shared
+            
+            CreateClientView(viewModel: .init(provider: preview))
+                .environment(\.managedObjectContext, preview.viewContext)
         }
     }
 }

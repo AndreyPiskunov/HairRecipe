@@ -42,10 +42,10 @@ struct ClientDetailView: View {
     }
 }
 
-//struct ClientDetailView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        NavigationStack {
-//            ClientDetailView()
-//        }
-//    }
-//}
+struct ClientDetailView_Previews: PreviewProvider {
+    static var previews: some View {
+        NavigationStack {
+            ClientDetailView(client: .preview())
+        }
+    }
+}

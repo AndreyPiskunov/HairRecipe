@@ -20,7 +20,7 @@ final class EditClientViewModel: ObservableObject {
         self.client = Client(context: self.context)
     }
     
-    func save() throws {
+    func saveClientContext() throws {
         if context.hasChanges {
             try context.save()
         }
