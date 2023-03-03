@@ -8,19 +8,22 @@
 import SwiftUI
 
 struct ClientRowView: View {
+    
+    var client: Client
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            Text("Name")
+            Text(client.name)
                 .font(.system(size: 26, weight: .bold))
-            Text("Procedure")
-            Text("Date")
+            Text(client.procedure)
+            Text(client.date, style: .date)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
 
-struct ClientRowView_Previews: PreviewProvider {
-    static var previews: some View {
-        ClientRowView()
-    }
-}
+//struct ClientRowView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ClientRowView(client: <#Client#>)
+//    }
+//}

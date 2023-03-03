@@ -8,7 +8,8 @@
 import Foundation
 import CoreData
 
-final class Client: NSManagedObject {
+final class Client: NSManagedObject, Identifiable {
+    //MARK: - Properties
     
     @NSManaged var date: Date
     @NSManaged var name: String
@@ -20,5 +21,21 @@ final class Client: NSManagedObject {
         super.awakeFromInsert()
         
         setPrimitiveValue(Date.now, forKey: "date")
+    }
+}
+//MARK: - Extensions
+
+extension Client {
+    
+    private static var clientsFetchRequest: NSFetchRequest<Client> {
+        NSFetchRequest(entityName: "Client")
+    }
+    
+    static func all() -> NSFetchRequest<Client> {
+        let request: NSFetchRequest<Client> = clientsFetchRequest
+        request.sortDescriptors = [
+            NSSortDescriptor(keyPath: \Client.name, ascending: true)
+        ]
+        return request
     }
 }

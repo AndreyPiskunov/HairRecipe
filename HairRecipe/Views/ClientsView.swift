@@ -8,18 +8,22 @@
 import SwiftUI
 
 struct ClientsView: View {
+    
     @State private var isShowNewClient = false
+    
+    @FetchRequest(fetchRequest: Client.all()) private var clients
+    
     var provider = ClientsProvider.shared
     
     var body: some View {
         NavigationStack {
             List {
-                ForEach((0...10), id: \.self) { item in
+                ForEach(clients) { client in
                     ZStack(alignment: .leading) {
-                        NavigationLink(destination:  ClientDetailView()) {
+                        NavigationLink(destination:  ClientDetailView(client: client)) {
                             EmptyView()
                         }
-                        ClientRowView()
+                        ClientRowView(client: client)
                     }
                 }
             }

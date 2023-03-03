@@ -8,41 +8,44 @@
 import SwiftUI
 
 struct ClientDetailView: View {
+    
+    let client: Client
+    
     var body: some View {
         List {
             Section("Biography") {
                 LabeledContent {
-                    Text("Procedure")
+                    Text(client.procedure)
                 } label: {
                     Text("Procedure")
                 }
                 LabeledContent {
-                    Text(.now, style: .date)
+                    Text(client.date, style: .date)
                 } label: {
                     Text("Date")
                 }
                 LabeledContent {
-                    Text("Price")
+                    Text(client.price)
                 } label: {
                     Text("Price")
                 }
             }
             Section("Recipe") {
                 LabeledContent {
-                    Text("Recipe")
+                    Text(client.recipe)
                 } label: {
                     Text("Recipe")
                 }
             }
         }
-        .navigationTitle("NameHERE")
+        .navigationTitle(client.name)
     }
 }
 
-struct ClientDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationStack {
-            ClientDetailView()
-        }
-    }
-}
+//struct ClientDetailView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NavigationStack {
+//            ClientDetailView()
+//        }
+//    }
+//}
