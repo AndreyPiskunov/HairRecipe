@@ -24,10 +24,24 @@ struct ClientsView: View {
                     List {
                         ForEach(clients) { client in
                             ZStack(alignment: .leading) {
-                                NavigationLink(destination:  ClientDetailView(client: client)) {
+                                NavigationLink(destination: ClientDetailView(client: client)) {
                                     EmptyView()
                                 }
                                 ClientRowView(client: client)
+                                    .swipeActions(allowsFullSwipe: true) {
+                                        
+                                        Button(role: .destructive) {
+                                        } label: {
+                                            Label("Delete", systemImage: "trash")
+                                        }
+                                        .tint(.red)
+                                        
+                                        Button {
+                                        } label: {
+                                            Label("Edit", systemImage: "pencil")
+                                        }
+                                        .tint(.orange)
+                                    }
                             }
                         }
                     }
@@ -57,14 +71,13 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         //Testing preview with clients for not start App
         let preview = ClientsProvider.shared
-        
+    
         ClientsView(provider: preview)
             .environment(\.managedObjectContext, preview.viewContext)
             .previewDisplayName("Clients with Data")
             .onAppear{
                 Client.makePreview(count: 10, in: preview.viewContext)
             }
-        
         //Testing empty preview for not start App
         let emptyPreview = ClientsProvider.shared
         
