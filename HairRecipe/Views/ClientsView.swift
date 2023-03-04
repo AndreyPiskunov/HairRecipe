@@ -17,13 +17,19 @@ struct ClientsView: View {
     
     var body: some View {
         NavigationStack {
-            List {
-                ForEach(clients) { client in
-                    ZStack(alignment: .leading) {
-                        NavigationLink(destination:  ClientDetailView(client: client)) {
-                            EmptyView()
+            ZStack {
+                if clients.isEmpty {
+                    NoClientsView()
+                } else {
+                    List {
+                        ForEach(clients) { client in
+                            ZStack(alignment: .leading) {
+                                NavigationLink(destination:  ClientDetailView(client: client)) {
+                                    EmptyView()
+                                }
+                                ClientRowView(client: client)
+                            }
                         }
-                        ClientRowView(client: client)
                     }
                 }
             }
@@ -49,7 +55,7 @@ struct ClientsView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        
+        //Testing preview with clients for not start App
         let preview = ClientsProvider.shared
         
         ClientsView(provider: preview)
@@ -58,5 +64,12 @@ struct ContentView_Previews: PreviewProvider {
             .onAppear{
                 Client.makePreview(count: 10, in: preview.viewContext)
             }
+        
+        //Testing empty preview for not start App
+        let emptyPreview = ClientsProvider.shared
+        
+        ClientsView(provider: emptyPreview)
+            .environment(\.managedObjectContext, emptyPreview.viewContext)
+            .previewDisplayName("Clients no Data")
     }
 }
