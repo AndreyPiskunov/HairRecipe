@@ -31,6 +31,13 @@ struct ClientsView: View {
                                     .swipeActions(allowsFullSwipe: true) {
                                         
                                         Button(role: .destructive) {
+                                            
+                                            do {
+                                                try delete(client)
+                                            } catch {
+                                                print(error)
+                                            }
+                                            
                                         } label: {
                                             Label("Delete", systemImage: "trash")
                                         }
@@ -66,6 +73,27 @@ struct ClientsView: View {
         }
     }
 }
+
+private extension ClientsView {
+    
+    func delete(_ client: Client) throws {
+        
+        let context = provider.viewContext
+        let existingClient = try context.existingObject(with: client.objectID)
+        context.delete(existingClient)
+        
+        Task(priority: .background) {
+            try await context.perform {
+                try context.save()
+            }
+        }
+        
+    }
+}
+
+
+
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
