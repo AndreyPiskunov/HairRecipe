@@ -7,9 +7,14 @@
 
 import SwiftUI
 
+struct SearchConfig: Equatable {
+    var searchQuery: String = ""
+}
+
 struct ClientsView: View {
     
     @State private var clientToEdit: Client?
+    @State private var searchConfig: SearchConfig = .init()
     
     @FetchRequest(fetchRequest: Client.allClients()) private var clients
     
@@ -67,6 +72,7 @@ struct ClientsView: View {
                     }
                 }
             }
+            .searchable(text: $searchConfig.searchQuery)
             .sheet(item: $clientToEdit,
                    onDismiss: { clientToEdit = nil },
                    content: { client in
@@ -76,6 +82,9 @@ struct ClientsView: View {
                 }
             })
             .navigationTitle("Clients")
+            .onChange(of: searchConfig) { newValue in
+                clients.nsPredicate = Client.filter(newValue.searchQuery)
+            }
         }
     }
 }

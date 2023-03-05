@@ -19,7 +19,7 @@ struct CreateClientView: View {
             Section("Biography") {
                 TextField ("Name", text: $viewModel.client.name)
                     .keyboardType(.namePhonePad)
-
+                
                 TextField ("Procedure", text: $viewModel.client.procedure)
                 
                 DatePicker("Date", selection: $viewModel.client.date,
@@ -53,6 +53,7 @@ struct CreateClientView: View {
         }
     }
 }
+
 private extension CreateClientView {
     
     func validateCorrectClient() {
