@@ -68,7 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				CE1065AB29AF2AC50090E972 /* HairRecipeApp.swift */,
-				CE54783C29B1C828002AF634 /* Provider */,
+				CE54783C29B1C828002AF634 /* CoreDataProvider */,
 				CE54783929B116F7002AF634 /* Model */,
 				CE54783A29B11710002AF634 /* Views */,
 				CE54783B29B11738002AF634 /* Resources */,
@@ -98,9 +98,9 @@
 			isa = PBXGroup;
 			children = (
 				CE1065AD29AF2AC50090E972 /* ClientsView.swift */,
-				CE54783F29B1D1A8002AF634 /* ClientRowView.swift */,
 				CE54784129B1D587002AF634 /* ClientDetailView.swift */,
 				CE54784829B25356002AF634 /* NoClientsView.swift */,
+				CE54783F29B1D1A8002AF634 /* ClientRowView.swift */,
 				CE54784529B1EA2F002AF634 /* Create */,
 			);
 			path = Views;
@@ -114,12 +114,12 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		CE54783C29B1C828002AF634 /* Provider */ = {
+		CE54783C29B1C828002AF634 /* CoreDataProvider */ = {
 			isa = PBXGroup;
 			children = (
 				CE54783D29B1C86D002AF634 /* ClientsProvider.swift */,
 			);
-			path = Provider;
+			path = CoreDataProvider;
 			sourceTree = "<group>";
 		};
 		CE54784529B1EA2F002AF634 /* Create */ = {

@@ -17,6 +17,10 @@ final class Client: NSManagedObject, Identifiable {
     @NSManaged var procedure: String
     @NSManaged var recipe: String
     
+    var isValid: Bool {
+        !name.isEmpty && !procedure.isEmpty && !price.isEmpty && !recipe.isEmpty
+    }
+    
     override func awakeFromInsert() {
         super.awakeFromInsert()
         

@@ -12,6 +12,8 @@ struct CreateClientView: View {
     @Environment(\.dismiss) private var dismiss
     @ObservedObject var viewModel: EditClientViewModel
     
+    @State private var hasError: Bool = false
+    
     var body: some View {
         List {
             Section("Biography") {
@@ -37,12 +39,7 @@ struct CreateClientView: View {
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 Button("Done") {
-                    do {
-                        try viewModel.saveClientContext()
-                        dismiss()
-                    } catch {
-                       print(error)
-                    }
+                    validateCorrectClient()
                 }
             }
             ToolbarItem(placement: .navigationBarTrailing) {
@@ -50,6 +47,24 @@ struct CreateClientView: View {
                     dismiss()
                 }
             }
+        }
+        .alert("Error", isPresented: $hasError, actions:{}) {
+            Text("Please, enter the information")
+        }
+    }
+}
+private extension CreateClientView {
+    
+    func validateCorrectClient() {
+        if viewModel.client.isValid {
+            do {
+                try viewModel.saveClientContext()
+                dismiss()
+            } catch {
+               print(error)
+            }
+        } else {
+            hasError = true
         }
     }
 }
