@@ -11,18 +11,26 @@ import CoreData
 final class EditClientViewModel: ObservableObject {
     
     @Published var client: Client
-    
+    let isNewClient: Bool
+    private let provider: ClientsProvider
     private let context: NSManagedObjectContext
     
     init(provider: ClientsProvider, client: Client? = nil) {
-        
+        self.provider = provider
         self.context = provider.newContext
-        self.client = Client(context: self.context)
+        
+        if let client,
+           let existingClientCopy = provider.exisistsInClients(client, in: context) {
+            self.client = existingClientCopy
+            self.isNewClient = false
+        } else {
+            self.client = Client(context: self.context)
+            self.isNewClient = true
+        }
     }
     
     func saveClientContext() throws {
-        if context.hasChanges {
-            try context.save()
-        }
+        try provider.saveClient(in: context)
     }
 }
+

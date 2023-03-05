@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ClientsView: View {
     
-    @State private var isShowNewClient = false
+    @State private var clientToEdit: Client?
     
     @FetchRequest(fetchRequest: Client.allClients()) private var clients
     
@@ -29,11 +29,11 @@ struct ClientsView: View {
                                 }
                                 ClientRowView(client: client)
                                     .swipeActions(allowsFullSwipe: true) {
-                                        
+
                                         Button(role: .destructive) {
                                             
                                             do {
-                                                try delete(client)
+                                                try provider.deleteClient(client, in: provider.viewContext)
                                             } catch {
                                                 print(error)
                                             }
@@ -44,6 +44,9 @@ struct ClientsView: View {
                                         .tint(.red)
                                         
                                         Button {
+                                            
+                                            clientToEdit = client
+                                            
                                         } label: {
                                             Label("Edit", systemImage: "pencil")
                                         }
@@ -57,49 +60,31 @@ struct ClientsView: View {
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
                     Button {
-                        isShowNewClient.toggle()
+                        clientToEdit = .empty(context: provider.newContext)
                     } label: {
                         Image(systemName: "plus")
                             .font(.title2)
                     }
                 }
             }
-            .sheet(isPresented: $isShowNewClient) {
+            .sheet(item: $clientToEdit,
+                   onDismiss: { clientToEdit = nil },
+                   content: { client in
                 NavigationStack {
-                    CreateClientView(viewModel: .init(provider: provider))
+                    CreateClientView(viewModel: .init(provider: provider,
+                                                      client: client))
                 }
-            }
+            })
             .navigationTitle("Clients")
         }
     }
 }
 
-private extension ClientsView {
-    
-    func delete(_ client: Client) throws {
-        
-        let context = provider.viewContext
-        let existingClient = try context.existingObject(with: client.objectID)
-        context.delete(existingClient)
-        
-        Task(priority: .background) {
-            try await context.perform {
-                try context.save()
-            }
-        }
-        
-    }
-}
-
-
-
-
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         //Testing preview with clients for not start App
         let preview = ClientsProvider.shared
-    
+        
         ClientsView(provider: preview)
             .environment(\.managedObjectContext, preview.viewContext)
             .previewDisplayName("Clients with Data")

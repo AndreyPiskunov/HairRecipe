@@ -30,10 +30,32 @@ final class ClientsProvider {
             persistentContainer.persistentStoreDescriptions.first?.url = .init(fileURLWithPath: "/dev/null")
         }
         persistentContainer.viewContext.automaticallyMergesChangesFromParent = true
-        persistentContainer.loadPersistentStores { __, error in
+        persistentContainer.loadPersistentStores { _ , error in
             if let error {
                 fatalError("Unable to store with: \(error)")
             }
+        }
+    }
+    //Verification client to existense in Core Dats
+    func exisistsInClients(_ client: Client, in context: NSManagedObjectContext) -> Client? {
+        try? context.existingObject(with: client.objectID) as? Client
+    }
+    //Delete client from Core Data
+    func deleteClient(_ client: Client, in context: NSManagedObjectContext) throws {
+        if let existingClient = exisistsInClients(client, in: context) {
+            context.delete(existingClient)
+            
+            Task(priority: .background) {
+                try await context.perform {
+                    try context.save()
+                }
+            }
+        }
+    }
+    //Save client to Core Data
+    func saveClient(in context: NSManagedObjectContext) throws {
+        if context.hasChanges {
+            try context.save()
         }
     }
 }

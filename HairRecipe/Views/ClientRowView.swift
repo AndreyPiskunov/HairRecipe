@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ClientRowView: View {
     
-    var client: Client
+    @ObservedObject var client: Client
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {

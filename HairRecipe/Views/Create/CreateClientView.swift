@@ -33,7 +33,7 @@ struct CreateClientView: View {
                            axis: .vertical)
             }
         }
-        .navigationTitle("Add Client")
+        .navigationTitle(viewModel.isNewClient ? "New Client" : "Edit Client")
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 Button("Done") {
