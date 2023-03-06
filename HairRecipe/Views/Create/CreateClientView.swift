@@ -37,13 +37,13 @@ struct CreateClientView: View {
         }
         .navigationTitle(viewModel.isNewClient ? "New Client" : "Edit Client")
         .toolbar {
-            ToolbarItem(placement: .navigationBarLeading) {
-                Button("Done") {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button("Save") {
                     validateCorrectClient()
                 }
             }
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button("Cancel") {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button("Back") {
                     dismiss()
                 }
             }
@@ -62,7 +62,7 @@ private extension CreateClientView {
                 try viewModel.saveClientContext()
                 dismiss()
             } catch {
-               print(error)
+                print(error)
             }
         } else {
             hasError = true

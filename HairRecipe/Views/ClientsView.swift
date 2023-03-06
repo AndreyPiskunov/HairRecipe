@@ -34,11 +34,11 @@ struct ClientsView: View {
                                 }
                                 ClientRowView(client: client)
                                     .swipeActions(allowsFullSwipe: true) {
-
+                                        
                                         Button(role: .destructive) {
                                             
                                             do {
-                                                try provider.deleteClient(client, in: provider.viewContext)
+                                                try provider.deleteClient(client, in: provider.newContext)
                                             } catch {
                                                 print(error)
                                             }

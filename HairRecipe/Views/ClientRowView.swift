@@ -14,9 +14,12 @@ struct ClientRowView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text(client.name)
-                .font(.system(size: 26, weight: .bold))
+                .font(.system(size: 26, weight: .medium))
             Text(client.procedure)
+                .font(.system(size: 17))
             Text(client.date, style: .date)
+                .font(.system(size: 15))
+                .foregroundColor(.gray)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
     }
