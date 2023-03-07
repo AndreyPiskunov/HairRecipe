@@ -7,6 +7,13 @@
 
 import SwiftUI
 
+enum FocusOnFields: Hashable {
+    case nameField
+    case procedureField
+    case priceField
+    case recipeField
+}
+
 struct CreateClientView: View {
     
     @Environment(\.dismiss) private var dismiss
@@ -14,13 +21,17 @@ struct CreateClientView: View {
     
     @State private var hasError: Bool = false
     
+    @FocusState private var fieldFocus: FocusOnFields?
+    
     var body: some View {
         List {
             Section("Biography") {
                 TextField ("Name", text: $viewModel.client.name)
                     .keyboardType(.namePhonePad)
-                
+                    .focused($fieldFocus, equals: .nameField)
+                   
                 TextField ("Procedure", text: $viewModel.client.procedure)
+                    .focused($fieldFocus, equals: .procedureField)
                 
                 DatePicker("Date", selection: $viewModel.client.date,
                            displayedComponents: [.date])
@@ -28,11 +39,17 @@ struct CreateClientView: View {
                 
                 TextField ("Price", text: $viewModel.client.price)
                     .keyboardType(.phonePad)
+                    .focused($fieldFocus, equals: .priceField)
             }
             Section("Recipe") {
                 TextField ("Add recipe",
                            text: $viewModel.client.recipe,
                            axis: .vertical)
+                .focused($fieldFocus, equals: .recipeField)
+            }
+        }.onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                fieldFocus = .nameField
             }
         }
         .navigationTitle(viewModel.isNewClient ? "New Client" : "Edit Client")

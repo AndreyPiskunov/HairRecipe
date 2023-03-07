@@ -24,7 +24,7 @@ struct ClientsView: View {
         NavigationStack {
             ZStack {
                 if clients.isEmpty {
-                    NoClientsView()
+                    ClearClientsView()
                 } else {
                     List {
                         ForEach(clients) { client in
@@ -36,22 +36,18 @@ struct ClientsView: View {
                                     .swipeActions(allowsFullSwipe: true) {
                                         
                                         Button(role: .destructive) {
-                                            
                                             do {
                                                 try provider.deleteClient(client, in: provider.newContext)
                                             } catch {
                                                 print(error)
                                             }
-                                            
                                         } label: {
                                             Label("Delete", systemImage: "trash")
                                         }
                                         .tint(.red)
                                         
                                         Button {
-                                            
                                             clientToEdit = client
-                                            
                                         } label: {
                                             Label("Edit", systemImage: "pencil")
                                         }
@@ -69,6 +65,7 @@ struct ClientsView: View {
                     } label: {
                         Image(systemName: "plus")
                             .font(.title2)
+                            .foregroundColor(Color(.darkGray))
                     }
                 }
             }

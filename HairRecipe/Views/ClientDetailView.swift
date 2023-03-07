@@ -17,25 +17,26 @@ struct ClientDetailView: View {
                 LabeledContent {
                     Text(client.procedure)
                 } label: {
-                    Text("Procedure")
+                    Text("Procedure:")
+                        .foregroundColor(Color(.darkGray))
                 }
                 LabeledContent {
                     Text(client.date, style: .date)
                 } label: {
-                    Text("Date")
+                    Text("Date:")
+                        .foregroundColor(Color(.darkGray))
                 }
                 LabeledContent {
                     Text(client.price)
+                    Text("RUB")
                 } label: {
-                    Text("Price")
+                    Text("Price:")
+                        .foregroundColor(Color(.darkGray))
                 }
             }
-            Section("Recipe") {
-                LabeledContent {
-                    Text(client.recipe)
-                } label: {
-                    Text("Recipe")
-                }
+            Section("Recipe:") {
+                Text(client.recipe)
+                    .foregroundColor(.gray)
             }
         }
         .navigationTitle(client.name)

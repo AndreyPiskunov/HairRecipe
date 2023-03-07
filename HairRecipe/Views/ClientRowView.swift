@@ -12,13 +12,13 @@ struct ClientRowView: View {
     @ObservedObject var client: Client
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
+        VStack(alignment: .leading, spacing: 4) {
             Text(client.name)
-                .font(.system(size: 26, weight: .medium))
+                .font(.system(size: 25, weight: .medium))
             Text(client.procedure)
-                .font(.system(size: 17))
+                .font(.system(size: 14))
             Text(client.date, style: .date)
-                .font(.system(size: 15))
+                .font(.system(size: 12))
                 .foregroundColor(.gray)
         }
         .frame(maxWidth: .infinity, alignment: .leading)

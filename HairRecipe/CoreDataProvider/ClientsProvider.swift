@@ -36,7 +36,7 @@ final class ClientsProvider {
             }
         }
     }
-    //Verification client to existense in Core Dats
+    //Verification client to existense in Core Data
     func exisistsInClients(_ client: Client, in context: NSManagedObjectContext) -> Client? {
         try? context.existingObject(with: client.objectID) as? Client
     }
