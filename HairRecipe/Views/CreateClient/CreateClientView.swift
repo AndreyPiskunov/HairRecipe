@@ -29,7 +29,7 @@ struct CreateClientView: View {
                 TextField ("Name", text: $viewModel.client.name)
                     .keyboardType(.namePhonePad)
                     .focused($fieldFocus, equals: .nameField)
-                   
+                
                 TextField ("Procedure", text: $viewModel.client.procedure)
                     .focused($fieldFocus, equals: .procedureField)
                 
@@ -55,13 +55,21 @@ struct CreateClientView: View {
         .navigationTitle(viewModel.isNewClient ? "New Client" : "Edit Client")
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
-                Button("Save") {
+                Button {
                     validateCorrectClient()
+                } label: {
+                    Image(systemName: "square.and.arrow.down")
+                        .font(.title2)
+                        .foregroundColor(Color(.darkGray))
                 }
             }
             ToolbarItem(placement: .navigationBarLeading) {
-                Button("Back") {
+                Button {
                     dismiss()
+                } label: {
+                    Image(systemName: "arrow.backward")
+                        .font(.title2)
+                        .foregroundColor(Color(.darkGray))
                 }
             }
         }

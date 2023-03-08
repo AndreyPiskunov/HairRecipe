@@ -13,12 +13,11 @@ struct SearchConfig: Equatable {
 
 struct ClientsView: View {
     
+    var provider = ClientsProvider.shared
+    
     @State private var clientToEdit: Client?
     @State private var searchConfig: SearchConfig = .init()
-    
     @FetchRequest(fetchRequest: Client.allClients()) private var clients
-    
-    var provider = ClientsProvider.shared
     
     var body: some View {
         NavigationStack {
@@ -42,14 +41,14 @@ struct ClientsView: View {
                                                 print(error)
                                             }
                                         } label: {
-                                            Label("Delete", systemImage: "trash")
+                                            Label("", systemImage: "trash")
                                         }
                                         .tint(.red)
                                         
                                         Button {
                                             clientToEdit = client
                                         } label: {
-                                            Label("Edit", systemImage: "pencil")
+                                            Label("", systemImage: "scissors")
                                         }
                                         .tint(.orange)
                                     }
@@ -63,7 +62,7 @@ struct ClientsView: View {
                     Button {
                         clientToEdit = .empty(context: provider.newContext)
                     } label: {
-                        Image(systemName: "plus")
+                        Image(systemName: "person.crop.circle.fill.badge.plus")
                             .font(.title2)
                             .foregroundColor(Color(.darkGray))
                     }
