@@ -10,6 +10,7 @@ import SwiftUI
 struct ClientDetailView: View {
     
     let client: Client
+    @Environment(\.dismiss) private var dismiss
     
     var body: some View {
         List {
@@ -40,6 +41,18 @@ struct ClientDetailView: View {
             }
         }
         .navigationTitle(client.name)
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button {
+                    dismiss()
+                } label: {
+                    Image(systemName: "arrow.backward")
+                        .font(.title2)
+                        .foregroundColor(Color(.darkGray))
+                }
+            }
+        }
     }
 }
 

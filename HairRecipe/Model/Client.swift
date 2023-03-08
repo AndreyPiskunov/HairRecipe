@@ -23,7 +23,6 @@ final class Client: NSManagedObject, Identifiable {
     
     override func awakeFromInsert() {
         super.awakeFromInsert()
-        
         setPrimitiveValue(Date.now, forKey: "date")
     }
 }
@@ -32,12 +31,10 @@ final class Client: NSManagedObject, Identifiable {
 extension Client {
     
     private static var clientsFetchRequest: NSFetchRequest<Client> {
-        
         NSFetchRequest(entityName: "Client")
     }
     
     static func allClients() -> NSFetchRequest<Client> {
-        
         let request: NSFetchRequest<Client> = clientsFetchRequest
         request.sortDescriptors = [
             NSSortDescriptor(keyPath: \Client.name, ascending: true)

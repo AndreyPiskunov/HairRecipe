@@ -99,8 +99,8 @@
 			children = (
 				CE1065AD29AF2AC50090E972 /* ClientsView.swift */,
 				CE54784129B1D587002AF634 /* ClientDetailView.swift */,
-				CE54784829B25356002AF634 /* ClearClientsView.swift */,
 				CE54783F29B1D1A8002AF634 /* ClientRowView.swift */,
+				CE54784829B25356002AF634 /* ClearClientsView.swift */,
 				CE54784529B1EA2F002AF634 /* CreateClient */,
 			);
 			path = Views;
