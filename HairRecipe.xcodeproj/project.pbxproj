@@ -19,6 +19,7 @@
 		CE54784429B1DD13002AF634 /* CreateClientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE54784329B1DD13002AF634 /* CreateClientView.swift */; };
 		CE54784729B1EAAB002AF634 /* EditClientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE54784629B1EAAB002AF634 /* EditClientViewModel.swift */; };
 		CE54784929B25356002AF634 /* ClearClientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE54784829B25356002AF634 /* ClearClientsView.swift */; };
+		CEDDAF6E29C0F921001DF217 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDDAF6D29C0F921001DF217 /* HapticManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		CE54784329B1DD13002AF634 /* CreateClientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateClientView.swift; sourceTree = "<group>"; };
 		CE54784629B1EAAB002AF634 /* EditClientViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditClientViewModel.swift; sourceTree = "<group>"; };
 		CE54784829B25356002AF634 /* ClearClientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearClientsView.swift; sourceTree = "<group>"; };
+		CEDB6B2629C08830003AAF31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEDDAF6D29C0F921001DF217 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +70,7 @@
 		CE1065AA29AF2AC50090E972 /* HairRecipe */ = {
 			isa = PBXGroup;
 			children = (
+				CEDB6B2629C08830003AAF31 /* Info.plist */,
 				CE1065AB29AF2AC50090E972 /* HairRecipeApp.swift */,
 				CE54783C29B1C828002AF634 /* CoreDataProvider */,
 				CE54783929B116F7002AF634 /* Model */,
@@ -90,6 +94,7 @@
 			children = (
 				CE54783729B116CF002AF634 /* Client.swift */,
 				CE54783429B1153E002AF634 /* ClientsDataModel.xcdatamodeld */,
+				CEDDAF6D29C0F921001DF217 /* HapticManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -209,6 +214,7 @@
 				CE54783829B116CF002AF634 /* Client.swift in Sources */,
 				CE1065AC29AF2AC50090E972 /* HairRecipeApp.swift in Sources */,
 				CE54784429B1DD13002AF634 /* CreateClientView.swift in Sources */,
+				CEDDAF6E29C0F921001DF217 /* HapticManager.swift in Sources */,
 				CE54784929B25356002AF634 /* ClearClientsView.swift in Sources */,
 				CE54784729B1EAAB002AF634 /* EditClientViewModel.swift in Sources */,
 			);
@@ -342,7 +348,7 @@
 				DEVELOPMENT_TEAM = 8C2J2DRGH6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = HairRecipe/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -371,7 +377,7 @@
 				DEVELOPMENT_TEAM = 8C2J2DRGH6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = HairRecipe/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

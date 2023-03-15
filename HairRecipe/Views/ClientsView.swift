@@ -60,6 +60,7 @@ struct ClientsView: View {
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
                     Button {
+                        HapticManager.instance.impact(style: .soft)
                         clientToEdit = .empty(context: provider.newContext)
                     } label: {
                         Image(systemName: "person.crop.circle.fill.badge.plus")

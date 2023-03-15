@@ -91,6 +91,7 @@ private extension CreateClientView {
             }
         } else {
             hasError = true
+            HapticManager.instance.notification(type: .error)
         }
     }
 }
