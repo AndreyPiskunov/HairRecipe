@@ -19,6 +19,7 @@
 		CE54784429B1DD13002AF634 /* CreateClientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE54784329B1DD13002AF634 /* CreateClientView.swift */; };
 		CE54784729B1EAAB002AF634 /* EditClientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE54784629B1EAAB002AF634 /* EditClientViewModel.swift */; };
 		CE54784929B25356002AF634 /* ClearClientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE54784829B25356002AF634 /* ClearClientsView.swift */; };
+		CE8A2EEA29C23D9100FCFC0F /* FocusOnFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8A2EE929C23D9100FCFC0F /* FocusOnFields.swift */; };
 		CEDDAF6E29C0F921001DF217 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDDAF6D29C0F921001DF217 /* HapticManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 		CE54784329B1DD13002AF634 /* CreateClientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateClientView.swift; sourceTree = "<group>"; };
 		CE54784629B1EAAB002AF634 /* EditClientViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditClientViewModel.swift; sourceTree = "<group>"; };
 		CE54784829B25356002AF634 /* ClearClientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearClientsView.swift; sourceTree = "<group>"; };
+		CE8A2EE929C23D9100FCFC0F /* FocusOnFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusOnFields.swift; sourceTree = "<group>"; };
 		CEDB6B2629C08830003AAF31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEDDAF6D29C0F921001DF217 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,6 +97,7 @@
 				CE54783729B116CF002AF634 /* Client.swift */,
 				CE54783429B1153E002AF634 /* ClientsDataModel.xcdatamodeld */,
 				CEDDAF6D29C0F921001DF217 /* HapticManager.swift */,
+				CE8A2EE929C23D9100FCFC0F /* FocusOnFields.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				CE54784429B1DD13002AF634 /* CreateClientView.swift in Sources */,
 				CEDDAF6E29C0F921001DF217 /* HapticManager.swift in Sources */,
 				CE54784929B25356002AF634 /* ClearClientsView.swift in Sources */,
+				CE8A2EEA29C23D9100FCFC0F /* FocusOnFields.swift in Sources */,
 				CE54784729B1EAAB002AF634 /* EditClientViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
