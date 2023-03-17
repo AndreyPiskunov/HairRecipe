@@ -12,13 +12,16 @@ struct SearchConfig: Equatable {
 }
 
 struct ClientsView: View {
+    //MARK: - Properties
     
     var provider = ClientsProvider.shared
     
     @State private var clientToEdit: Client?
     @State private var searchConfig: SearchConfig = .init()
     @State private var showAlert: Bool = false
+    
     @FetchRequest(fetchRequest: Client.allClients()) private var clients
+    //MARK: - Body
     
     var body: some View {
         NavigationStack {
@@ -93,6 +96,7 @@ struct ClientsView: View {
         }
     }
 }
+//MARK: - Preview
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

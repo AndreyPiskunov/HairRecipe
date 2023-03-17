@@ -36,6 +36,8 @@ final class ClientsProvider {
             }
         }
     }
+    //MARK: - Functions
+    
     //Verification client to existense in Core Data
     func exisistsInClients(_ client: Client, in context: NSManagedObjectContext) -> Client? {
         try? context.existingObject(with: client.objectID) as? Client
@@ -59,6 +61,7 @@ final class ClientsProvider {
         }
     }
 }
+//MARK: - Extensions
 
 extension EnvironmentValues {
     static var isPreview: Bool {

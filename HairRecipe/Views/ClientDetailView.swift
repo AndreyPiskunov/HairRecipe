@@ -38,6 +38,7 @@ struct ClientDetailView: View {
             Section("Recipe:") {
                 Text(client.recipe)
                     .foregroundColor(.gray)
+                    .textSelection(.enabled)
             }
         }
         .navigationTitle(client.name)
