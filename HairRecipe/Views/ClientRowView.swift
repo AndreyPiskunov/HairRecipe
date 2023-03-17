@@ -17,6 +17,7 @@ struct ClientRowView: View {
                 .font(.system(size: 25, weight: .medium))
             Text(client.procedure)
                 .font(.system(size: 14))
+                .foregroundColor(ColorsApp.customGreen)
             Text(client.date, style: .date)
                 .font(.system(size: 12))
                 .foregroundColor(.gray)

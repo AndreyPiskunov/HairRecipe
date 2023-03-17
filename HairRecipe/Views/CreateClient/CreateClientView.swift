@@ -12,7 +12,7 @@ struct CreateClientView: View {
     @Environment(\.dismiss) private var dismiss
     @ObservedObject var viewModel: EditClientViewModel
     
-    @State private var hasError: Bool = false
+    @State private var showErrorAlert: Bool = false
     @FocusState private var fieldFocus: FocusOnFields?
     
     
@@ -76,8 +76,8 @@ struct CreateClientView: View {
                 }
             }
         }
-        .alert("Error", isPresented: $hasError, actions:{}) {
-            Text("Please, enter the information")
+        .alert("Client is not saved", isPresented: $showErrorAlert, actions:{}) {
+            Text("Please, enter the information.")
         }
     }
 }
@@ -93,7 +93,7 @@ private extension CreateClientView {
                 print(error)
             }
         } else {
-            hasError = true
+            showErrorAlert = true
             HapticManager.instance.notification(type: .error)
         }
     }

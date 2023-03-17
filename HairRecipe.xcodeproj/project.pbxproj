@@ -19,6 +19,7 @@
 		CE54784429B1DD13002AF634 /* CreateClientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE54784329B1DD13002AF634 /* CreateClientView.swift */; };
 		CE54784729B1EAAB002AF634 /* EditClientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE54784629B1EAAB002AF634 /* EditClientViewModel.swift */; };
 		CE54784929B25356002AF634 /* ClearClientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE54784829B25356002AF634 /* ClearClientsView.swift */; };
+		CE81497029C35B7400310D57 /* ColorsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81496F29C35B7400310D57 /* ColorsApp.swift */; };
 		CE8A2EEA29C23D9100FCFC0F /* FocusOnFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8A2EE929C23D9100FCFC0F /* FocusOnFields.swift */; };
 		CEDDAF6E29C0F921001DF217 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDDAF6D29C0F921001DF217 /* HapticManager.swift */; };
 /* End PBXBuildFile section */
@@ -37,6 +38,7 @@
 		CE54784329B1DD13002AF634 /* CreateClientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateClientView.swift; sourceTree = "<group>"; };
 		CE54784629B1EAAB002AF634 /* EditClientViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditClientViewModel.swift; sourceTree = "<group>"; };
 		CE54784829B25356002AF634 /* ClearClientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearClientsView.swift; sourceTree = "<group>"; };
+		CE81496F29C35B7400310D57 /* ColorsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsApp.swift; sourceTree = "<group>"; };
 		CE8A2EE929C23D9100FCFC0F /* FocusOnFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusOnFields.swift; sourceTree = "<group>"; };
 		CEDB6B2629C08830003AAF31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEDDAF6D29C0F921001DF217 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
@@ -72,7 +74,6 @@
 		CE1065AA29AF2AC50090E972 /* HairRecipe */ = {
 			isa = PBXGroup;
 			children = (
-				CEDB6B2629C08830003AAF31 /* Info.plist */,
 				CE1065AB29AF2AC50090E972 /* HairRecipeApp.swift */,
 				CE54783C29B1C828002AF634 /* CoreDataProvider */,
 				CE54783929B116F7002AF634 /* Model */,
@@ -98,6 +99,7 @@
 				CE54783429B1153E002AF634 /* ClientsDataModel.xcdatamodeld */,
 				CEDDAF6D29C0F921001DF217 /* HapticManager.swift */,
 				CE8A2EE929C23D9100FCFC0F /* FocusOnFields.swift */,
+				CE81496F29C35B7400310D57 /* ColorsApp.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -117,6 +119,7 @@
 		CE54783B29B11738002AF634 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CEDB6B2629C08830003AAF31 /* Info.plist */,
 				CE1065AF29AF2AC90090E972 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -213,6 +216,7 @@
 				CE54783629B1153E002AF634 /* ClientsDataModel.xcdatamodeld in Sources */,
 				CE1065AE29AF2AC50090E972 /* ClientsView.swift in Sources */,
 				CE54784029B1D1A8002AF634 /* ClientRowView.swift in Sources */,
+				CE81497029C35B7400310D57 /* ColorsApp.swift in Sources */,
 				CE54783E29B1C86D002AF634 /* ClientsProvider.swift in Sources */,
 				CE54783829B116CF002AF634 /* Client.swift in Sources */,
 				CE1065AC29AF2AC50090E972 /* HairRecipeApp.swift in Sources */,
@@ -352,7 +356,7 @@
 				DEVELOPMENT_TEAM = 8C2J2DRGH6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = HairRecipe/Info.plist;
+				INFOPLIST_FILE = HairRecipe/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -381,7 +385,7 @@
 				DEVELOPMENT_TEAM = 8C2J2DRGH6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = HairRecipe/Info.plist;
+				INFOPLIST_FILE = HairRecipe/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

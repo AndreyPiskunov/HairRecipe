@@ -17,6 +17,7 @@ struct ClientsView: View {
     
     @State private var clientToEdit: Client?
     @State private var searchConfig: SearchConfig = .init()
+    @State private var showAlert: Bool = false
     @FetchRequest(fetchRequest: Client.allClients()) private var clients
     
     var body: some View {
@@ -34,12 +35,8 @@ struct ClientsView: View {
                                 ClientRowView(client: client)
                                     .swipeActions(allowsFullSwipe: true) {
                                         
-                                        Button(role: .destructive) {
-                                            do {
-                                                try provider.deleteClient(client, in: provider.newContext)
-                                            } catch {
-                                                print(error)
-                                            }
+                                        Button() {
+                                            showAlert.toggle()
                                         } label: {
                                             Label("", systemImage: "trash")
                                         }
@@ -52,6 +49,17 @@ struct ClientsView: View {
                                         }
                                         .tint(.orange)
                                     }
+                            }
+                            .alert("Delete client: \(client.name)", isPresented: $showAlert) {
+                                Button("Delete", role: .destructive) {
+                                    do {
+                                        try provider.deleteClient(client, in: provider.newContext)
+                                    } catch {
+                                        print(error)
+                                    }
+                                }
+                            } message: {
+                                Text("Are you sure?")
                             }
                         }
                     }
