@@ -38,8 +38,12 @@ struct ClientsView: View {
                                 ClientRowView(client: client)
                                     .swipeActions(allowsFullSwipe: true) {
                                         
-                                        Button() {
-                                            showAlert.toggle()
+                                        Button(role: .destructive) {
+                                            do {
+                                                try provider.deleteClient(client, in: provider.newContext)
+                                            } catch {
+                                                print(error)
+                                            }
                                         } label: {
                                             Label("", systemImage: "trash")
                                         }
@@ -52,17 +56,6 @@ struct ClientsView: View {
                                         }
                                         .tint(.orange)
                                     }
-                            }
-                            .alert("Delete client: \(client.name)", isPresented: $showAlert) {
-                                Button("Delete", role: .destructive) {
-                                    do {
-                                        try provider.deleteClient(client, in: provider.newContext)
-                                    } catch {
-                                        print(error)
-                                    }
-                                }
-                            } message: {
-                                Text("Are you sure?")
                             }
                         }
                     }

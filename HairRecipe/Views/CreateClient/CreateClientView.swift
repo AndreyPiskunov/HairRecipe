@@ -15,7 +15,6 @@ struct CreateClientView: View {
     @State private var showErrorAlert: Bool = false
     @FocusState private var fieldFocus: FocusOnFields?
     
-    
     var body: some View {
         List {
             Section("Biography") {
@@ -39,13 +38,17 @@ struct CreateClientView: View {
                            text: $viewModel.client.recipe,
                            axis: .vertical)
                 .focused($fieldFocus, equals: .recipeField)
+                .frame(minHeight: 40)
             }
             .onAppear {
+                UITextField.appearance().clearButtonMode = .whileEditing
+                
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                     fieldFocus = .nameField
                 }
             }
-        }.onSubmit {
+        }
+        .onSubmit {
             switch fieldFocus {
             case .nameField:
                 fieldFocus = .procedureField
@@ -66,14 +69,8 @@ struct CreateClientView: View {
                         .foregroundColor(Color(.darkGray))
                 }
             }
-            ToolbarItem(placement: .navigationBarLeading) {
-                Button {
-                    dismiss()
-                } label: {
-                    Image(systemName: "arrow.backward")
-                        .font(.title2)
-                        .foregroundColor(Color(.darkGray))
-                }
+            ToolbarItem(placement: .principal) {
+                Image(systemName: "chevron.down")
             }
         }
         .alert("Client is not saved", isPresented: $showErrorAlert, actions:{}) {
