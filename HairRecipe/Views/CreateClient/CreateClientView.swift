@@ -66,11 +66,13 @@ struct CreateClientView: View {
                 } label: {
                     Image(systemName: "square.and.arrow.down")
                         .font(.title2)
-                        .foregroundColor(Color(.darkGray))
+                        .foregroundColor(ColorsApp.customGreen)
                 }
             }
             ToolbarItem(placement: .principal) {
-                Image(systemName: "chevron.down")
+                Capsule()
+                    .fill(.gray)
+                    .frame(width: 40, height: 4)
             }
         }
         .alert("Client is not saved", isPresented: $showErrorAlert, actions:{}) {

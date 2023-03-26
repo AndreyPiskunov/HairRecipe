@@ -69,11 +69,11 @@ struct ClientsView: View {
                     } label: {
                         Image(systemName: "person.crop.circle.fill.badge.plus")
                             .font(.title2)
-                            .foregroundColor(Color(.darkGray))
+                            .foregroundColor(ColorsApp.customGreen)
                     }
                 }
             }
-            .searchable(text: $searchConfig.searchQuery)
+            .searchable(text: $searchConfig.searchQuery, prompt: "Search a client")
             .sheet(item: $clientToEdit,
                    onDismiss: { clientToEdit = nil },
                    content: { client in
