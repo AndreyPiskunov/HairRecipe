@@ -1,0 +1,40 @@
+/* 
+  Localizable.strings
+  HairRecipe
+
+  Created by Andrey Piskunov on 29.03.2023.
+  
+*/
+//MARK: - ClientsView
+
+"Search a client" = "Поиск";
+"Clients" = "Клиенты";
+
+//MARK: - ClientDetailView
+
+"Biography" = "Биография";
+"Procedure:" = "Процедура:";
+"Date:" = "Дата:";
+"RUB" = "РУБ";
+"Price:" = "Цена:";
+"Recipe:" = "Рецепт / Заметка";
+
+//MARK: - ClearClientsView
+
+"No added clients." = "Список пуст.";
+
+//MARK: - CreateClientView
+
+"Name" = "Имя";
+"Procedure" = "Процедура";
+"Date" = "Дата";
+"Price" = "Цена";
+"Recipe" = "Рецепт";
+"Enter recipe or note" = "Ваш рецепт или заметка";
+"New Client" = "Новый клиент";
+"Edit Client" = "Редактировать";
+
+//MARK: - Alerts
+
+"Client is not saved" = "Клиент не может быть сохранен.";
+"Please, enter the information." = "Пожалуйста, введите информацию.";
