@@ -22,6 +22,7 @@
 		CE7C268D29D46EA700942D72 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE7C268F29D46EA700942D72 /* Localizable.strings */; };
 		CE81497029C35B7400310D57 /* ColorsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81496F29C35B7400310D57 /* ColorsApp.swift */; };
 		CE8A2EEA29C23D9100FCFC0F /* FocusOnFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8A2EE929C23D9100FCFC0F /* FocusOnFields.swift */; };
+		CEAFF0FF29F6EE9600DD8DBB /* SearchConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAFF0FE29F6EE9600DD8DBB /* SearchConfig.swift */; };
 		CEBDAA2C29C4EAF60036D6ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEBDAA2B29C4EAF60036D6ED /* LaunchScreen.storyboard */; };
 		CEDDAF6E29C0F921001DF217 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDDAF6D29C0F921001DF217 /* HapticManager.swift */; };
 /* End PBXBuildFile section */
@@ -43,6 +44,7 @@
 		CE7C268E29D46EA700942D72 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CE81496F29C35B7400310D57 /* ColorsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsApp.swift; sourceTree = "<group>"; };
 		CE8A2EE929C23D9100FCFC0F /* FocusOnFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusOnFields.swift; sourceTree = "<group>"; };
+		CEAFF0FE29F6EE9600DD8DBB /* SearchConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchConfig.swift; sourceTree = "<group>"; };
 		CEBDAA2B29C4EAF60036D6ED /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEDB6B2629C08830003AAF31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEDDAF6D29C0F921001DF217 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				CEDDAF6D29C0F921001DF217 /* HapticManager.swift */,
 				CE8A2EE929C23D9100FCFC0F /* FocusOnFields.swift */,
 				CE81496F29C35B7400310D57 /* ColorsApp.swift */,
+				CEAFF0FE29F6EE9600DD8DBB /* SearchConfig.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 				CE54784229B1D587002AF634 /* ClientDetailView.swift in Sources */,
 				CE54783629B1153E002AF634 /* ClientsDataModel.xcdatamodeld in Sources */,
 				CE1065AE29AF2AC50090E972 /* ClientsView.swift in Sources */,
+				CEAFF0FF29F6EE9600DD8DBB /* SearchConfig.swift in Sources */,
 				CE54784029B1D1A8002AF634 /* ClientRowView.swift in Sources */,
 				CE81497029C35B7400310D57 /* ColorsApp.swift in Sources */,
 				CE54783E29B1C86D002AF634 /* ClientsProvider.swift in Sources */,

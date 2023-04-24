@@ -21,7 +21,7 @@
 
 //MARK: - ClearClientsView
 
-"No added clients." = "Список пуст.";
+"No added clients." = "Нет добавленных клиентов.";
 
 //MARK: - CreateClientView
 

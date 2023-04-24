@@ -7,10 +7,6 @@
 
 import SwiftUI
 
-struct SearchConfig: Equatable {
-    var searchQuery: String = ""
-}
-
 struct ClientsView: View {
     //MARK: - Properties
     
@@ -19,6 +15,8 @@ struct ClientsView: View {
     @State private var clientToEdit: Client?
     @State private var searchConfig: SearchConfig = .init()
     @State private var showAlert: Bool = false
+    @State private var showConformation: Bool = false
+    @State private var clientItem: Client?
     
     @FetchRequest(fetchRequest: Client.allClients()) private var clients
     //MARK: - Body
@@ -39,11 +37,8 @@ struct ClientsView: View {
                                     .swipeActions(allowsFullSwipe: true) {
                                         
                                         Button(role: .destructive) {
-                                            do {
-                                                try provider.deleteClient(client, in: provider.newContext)
-                                            } catch {
-                                                print(error)
-                                            }
+                                            clientItem = client
+                                            showConformation.toggle()
                                         } label: {
                                             Label("", systemImage: "trash")
                                         }
@@ -73,6 +68,26 @@ struct ClientsView: View {
                     }
                 }
             }
+            .confirmationDialog("Delete client",
+                                isPresented: $showConformation,
+                                titleVisibility: .hidden,
+                                presenting: clientItem,
+                                actions: { client in
+                Button(role: .destructive) {
+                    withAnimation {
+                        do {
+                            try provider.deleteClient(client, in: provider.newContext)
+                        } catch {
+                            //TODO:
+                        }
+                    }
+                } label: {
+                    Text("Delete")
+                }
+            },
+                                message: { client in
+                Text("You want to delete: \(client.name)?")
+            })
             .searchable(text: $searchConfig.searchQuery, prompt: "Search a client")
             .sheet(item: $clientToEdit,
                    onDismiss: { clientToEdit = nil },

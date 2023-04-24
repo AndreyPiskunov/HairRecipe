@@ -10,6 +10,7 @@ import SwiftUI
 struct ClearClientsView: View {
     var body: some View {
         Text("No added clients.")
+            .foregroundColor(.gray)
     }
 }
 
