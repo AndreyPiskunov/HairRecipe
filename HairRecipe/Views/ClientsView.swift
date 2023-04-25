@@ -70,7 +70,7 @@ struct ClientsView: View {
             }
             .confirmationDialog("Delete client",
                                 isPresented: $showConformation,
-                                titleVisibility: .hidden,
+                                titleVisibility: .visible,
                                 presenting: clientItem,
                                 actions: { client in
                 Button(role: .destructive) {
@@ -86,7 +86,7 @@ struct ClientsView: View {
                 }
             },
                                 message: { client in
-                Text("You want to delete: \(client.name)?")
+                Text("\(client.name)")
             })
             .searchable(text: $searchConfig.searchQuery, prompt: "Search a client")
             .sheet(item: $clientToEdit,
