@@ -19,6 +19,7 @@ struct ClientsView: View {
     @State private var clientItem: Client?
     
     @FetchRequest(fetchRequest: Client.allClients()) private var clients
+    
     //MARK: - Body
     
     var body: some View {
@@ -68,7 +69,7 @@ struct ClientsView: View {
                     }
                 }
             }
-            .confirmationDialog("Delete client",
+            .confirmationDialog("Delete client?",
                                 isPresented: $showConformation,
                                 titleVisibility: .visible,
                                 presenting: clientItem,

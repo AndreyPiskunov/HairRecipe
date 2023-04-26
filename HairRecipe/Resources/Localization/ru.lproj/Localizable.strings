@@ -10,7 +10,7 @@
 "Search a client" = "Поиск";
 "Clients" = "Клиенты";
 "Delete" = "Удалить";
-"Delete client" = "Подтвердить удаление?";
+"Delete client?" = "Подтвердить удаление?";
 
 //MARK: - ClientDetailView
 

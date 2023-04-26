@@ -19,6 +19,7 @@
 		CE54784429B1DD13002AF634 /* CreateClientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE54784329B1DD13002AF634 /* CreateClientView.swift */; };
 		CE54784729B1EAAB002AF634 /* EditClientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE54784629B1EAAB002AF634 /* EditClientViewModel.swift */; };
 		CE54784929B25356002AF634 /* ClearClientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE54784829B25356002AF634 /* ClearClientsView.swift */; };
+		CE604DD129F91B4200F418B0 /* CompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE604DD029F91B4200F418B0 /* CompleteView.swift */; };
 		CE7C268D29D46EA700942D72 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE7C268F29D46EA700942D72 /* Localizable.strings */; };
 		CE81497029C35B7400310D57 /* ColorsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81496F29C35B7400310D57 /* ColorsApp.swift */; };
 		CE8A2EEA29C23D9100FCFC0F /* FocusOnFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8A2EE929C23D9100FCFC0F /* FocusOnFields.swift */; };
@@ -41,6 +42,7 @@
 		CE54784329B1DD13002AF634 /* CreateClientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateClientView.swift; sourceTree = "<group>"; };
 		CE54784629B1EAAB002AF634 /* EditClientViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditClientViewModel.swift; sourceTree = "<group>"; };
 		CE54784829B25356002AF634 /* ClearClientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearClientsView.swift; sourceTree = "<group>"; };
+		CE604DD029F91B4200F418B0 /* CompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteView.swift; sourceTree = "<group>"; };
 		CE7C268E29D46EA700942D72 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CE81496F29C35B7400310D57 /* ColorsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsApp.swift; sourceTree = "<group>"; };
 		CE8A2EE929C23D9100FCFC0F /* FocusOnFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusOnFields.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				CE54784829B25356002AF634 /* ClearClientsView.swift */,
 				CEBDAA2A29C4EADB0036D6ED /* LaunchScreen */,
 				CE54784529B1EA2F002AF634 /* CreateClient */,
+				CE604DD029F91B4200F418B0 /* CompleteView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 				CE54784929B25356002AF634 /* ClearClientsView.swift in Sources */,
 				CE8A2EEA29C23D9100FCFC0F /* FocusOnFields.swift in Sources */,
 				CE54784729B1EAAB002AF634 /* EditClientViewModel.swift in Sources */,
+				CE604DD129F91B4200F418B0 /* CompleteView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
