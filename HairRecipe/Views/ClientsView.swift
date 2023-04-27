@@ -9,19 +9,18 @@ import SwiftUI
 
 struct ClientsView: View {
     //MARK: - Properties
-    
     var provider = ClientsProvider.shared
     
     @State private var clientToEdit: Client?
+    @State private var clientItem: Client?
     @State private var searchConfig: SearchConfig = .init()
     @State private var showAlert: Bool = false
     @State private var showConformation: Bool = false
-    @State private var clientItem: Client?
+    @State private var showSucces: Bool = false
     
     @FetchRequest(fetchRequest: Client.allClients()) private var clients
     
     //MARK: - Body
-    
     var body: some View {
         NavigationStack {
             ZStack {
@@ -36,7 +35,7 @@ struct ClientsView: View {
                                 }
                                 ClientRowView(client: client)
                                     .swipeActions(allowsFullSwipe: true) {
-                                        
+                                        //Delete button
                                         Button(role: .destructive) {
                                             clientItem = client
                                             showConformation.toggle()
@@ -44,7 +43,7 @@ struct ClientsView: View {
                                             Label("", systemImage: "trash")
                                         }
                                         .tint(.red)
-                                        
+                                        //Edit button
                                         Button {
                                             clientToEdit = client
                                         } label: {
@@ -95,34 +94,48 @@ struct ClientsView: View {
                    content: { client in
                 NavigationStack {
                     CreateClientView(viewModel: .init(provider: provider,
-                                                      client: client))
+                                                      client: client)) {
+                        withAnimation(.spring().delay(0.25)) {
+                            showSucces.toggle()
+                        }
+                    }
                 }
             })
             .navigationTitle("Clients")
             .onChange(of: searchConfig) { newValue in
                 clients.nsPredicate = Client.filter(newValue.searchQuery)
             }
+            .overlay {
+                if showSucces {
+                    CompleteView()
+                        .onAppear() {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1.9) {
+                                showSucces.toggle()
+                            }
+                        }
+                }
+            }
         }
     }
 }
-//MARK: - Preview
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        //Testing preview with clients for not start App
-        let preview = ClientsProvider.shared
-        
-        ClientsView(provider: preview)
-            .environment(\.managedObjectContext, preview.viewContext)
-            .previewDisplayName("Clients with Data")
-            .onAppear{
-                Client.makePreview(count: 10, in: preview.viewContext)
-            }
-        //Testing empty preview for not start App
-        let emptyPreview = ClientsProvider.shared
-        
-        ClientsView(provider: emptyPreview)
-            .environment(\.managedObjectContext, emptyPreview.viewContext)
-            .previewDisplayName("Clients no Data")
-    }
-}
+////MARK: - Preview
+//
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        //Testing preview with clients for not start App
+//        let preview = ClientsProvider.shared
+//        
+//        ClientsView(provider: preview)
+//            .environment(\.managedObjectContext, preview.viewContext)
+//            .previewDisplayName("Clients with Data")
+//            .onAppear{
+//                Client.makePreview(count: 10, in: preview.viewContext)
+//            }
+//        //Testing empty preview for not start App
+//        let emptyPreview = ClientsProvider.shared
+//        
+//        ClientsView(provider: emptyPreview)
+//            .environment(\.managedObjectContext, emptyPreview.viewContext)
+//            .previewDisplayName("Clients no Data")
+//    }
+//}

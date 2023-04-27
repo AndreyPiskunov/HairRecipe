@@ -120,9 +120,9 @@
 				CE54784129B1D587002AF634 /* ClientDetailView.swift */,
 				CE54783F29B1D1A8002AF634 /* ClientRowView.swift */,
 				CE54784829B25356002AF634 /* ClearClientsView.swift */,
+				CE604DD029F91B4200F418B0 /* CompleteView.swift */,
 				CEBDAA2A29C4EADB0036D6ED /* LaunchScreen */,
 				CE54784529B1EA2F002AF634 /* CreateClient */,
-				CE604DD029F91B4200F418B0 /* CompleteView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";

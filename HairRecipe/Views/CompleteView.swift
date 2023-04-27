@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct CompleteView: View {
+    
     var body: some View {
-        VStack {
-            Image(systemName: "checkmark")
-                .font(.system(.largeTitle, design: .rounded).bold())
-                .padding()
-                .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
-        }
+        Text("Client saved")
+            .font(.headline)
+            .padding()
+            .background(.thinMaterial,
+                        in: RoundedRectangle(cornerRadius: 10, style: .continuous))
     }
 }
 

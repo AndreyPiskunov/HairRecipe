@@ -36,6 +36,10 @@
 "New Client" = "Новый клиент";
 "Edit Client" = "Редактировать";
 
+//MARK: - CompleteView
+
+"Client saved" = "Клиент сохранен";
+
 //MARK: - Alerts
 
 "Client is not saved" = "Клиент не может быть сохранен.";
