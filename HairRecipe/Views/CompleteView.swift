@@ -7,8 +7,7 @@
 
 import SwiftUI
 
-struct CompleteView: View {
-    
+struct CompleteSaveView: View {
     var body: some View {
         Text("Client saved")
             .font(.headline)
@@ -18,8 +17,18 @@ struct CompleteView: View {
     }
 }
 
-struct CompleteView_Previews: PreviewProvider {
-    static var previews: some View {
-        CompleteView()
+struct CompleteDeleteView: View {
+    var body: some View {
+        Text("Client deleted")
+            .font(.headline)
+            .padding()
+            .background(.thinMaterial,
+                        in: RoundedRectangle(cornerRadius: 10, style: .continuous))
     }
 }
+
+//struct CompleteView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CompleteView()
+//    }
+//}

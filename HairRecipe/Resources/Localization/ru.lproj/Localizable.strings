@@ -39,6 +39,7 @@
 //MARK: - CompleteView
 
 "Client saved" = "Клиент сохранен";
+"Client deleted" = "Клиент удален";
 
 //MARK: - Alerts
 

@@ -17,6 +17,7 @@ struct ClientsView: View {
     @State private var showAlert: Bool = false
     @State private var showConformation: Bool = false
     @State private var showSucces: Bool = false
+    @State private var showSuccesDelete: Bool = false
     
     @FetchRequest(fetchRequest: Client.allClients()) private var clients
     
@@ -77,6 +78,9 @@ struct ClientsView: View {
                     withAnimation {
                         do {
                             try provider.deleteClient(client, in: provider.newContext)
+                            withAnimation(.spring().delay(0.3)) {
+                                showSuccesDelete.toggle()
+                            }
                         } catch {
                             //TODO:
                         }
@@ -95,7 +99,7 @@ struct ClientsView: View {
                 NavigationStack {
                     CreateClientView(viewModel: .init(provider: provider,
                                                       client: client)) {
-                        withAnimation(.spring().delay(0.25)) {
+                        withAnimation(.spring().delay(0.3)) {
                             showSucces.toggle()
                         }
                     }
@@ -107,10 +111,17 @@ struct ClientsView: View {
             }
             .overlay {
                 if showSucces {
-                    CompleteView()
+                    CompleteSaveView()
                         .onAppear() {
                             DispatchQueue.main.asyncAfter(deadline: .now() + 1.9) {
                                 showSucces.toggle()
+                            }
+                        }
+                } else if showSuccesDelete {
+                    CompleteDeleteView()
+                        .onAppear() {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1.9) {
+                                showSuccesDelete.toggle()
                             }
                         }
                 }
