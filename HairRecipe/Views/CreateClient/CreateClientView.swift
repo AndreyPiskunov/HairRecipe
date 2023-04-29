@@ -11,9 +11,10 @@ struct CreateClientView: View {
     
     @Environment(\.dismiss) private var dismiss
     @ObservedObject var viewModel: EditClientViewModel
-    
     @State private var showErrorAlert: Bool = false
     @FocusState private var fieldFocus: FocusOnFields?
+    
+    let successfulAction: () -> Void
     
     var body: some View {
         List {
@@ -88,6 +89,7 @@ private extension CreateClientView {
             do {
                 try viewModel.saveClientContext()
                 dismiss()
+                successfulAction()
             } catch {
                 print(error)
             }
@@ -98,13 +100,13 @@ private extension CreateClientView {
     }
 }
 
-struct CreateClientView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationStack {
-            let preview = ClientsProvider.shared
-            
-            CreateClientView(viewModel: .init(provider: preview))
-                .environment(\.managedObjectContext, preview.viewContext)
-        }
-    }
-}
+//struct CreateClientView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NavigationStack {
+//            let preview = ClientsProvider.shared
+//
+//            CreateClientView(viewModel: .init(provider: preview))
+//                .environment(\.managedObjectContext, preview.viewContext)
+//        }
+//    }
+//}
