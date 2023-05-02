@@ -113,6 +113,9 @@ struct ClientsView: View {
                 if showSucces {
                     CompleteSaveView()
                         .onAppear() {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                HapticManager.instance.impact(style: .rigid)
+                            }
                             DispatchQueue.main.asyncAfter(deadline: .now() + 1.9) {
                                 showSucces.toggle()
                             }
@@ -120,6 +123,9 @@ struct ClientsView: View {
                 } else if showSuccesDelete {
                     CompleteDeleteView()
                         .onAppear() {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+                                HapticManager.instance.impact(style: .rigid)
+                            }
                             DispatchQueue.main.asyncAfter(deadline: .now() + 1.9) {
                                 showSuccesDelete.toggle()
                             }
