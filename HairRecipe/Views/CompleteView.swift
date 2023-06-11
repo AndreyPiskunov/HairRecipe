@@ -27,8 +27,8 @@ struct CompleteDeleteView: View {
     }
 }
 
-//struct CompleteView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CompleteView()
-//    }
-//}
+struct CompleteView_Previews: PreviewProvider {
+    static var previews: some View {
+        CompleteSaveView()
+    }
+}
